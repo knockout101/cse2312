@@ -1,0 +1,18 @@
+- Flags
+    - In the Current Program Status Register (CPSR)
+    - Call Move register (MRS) and give an available register to pull the values
+        example:
+            mrs r0, cpsr @ Read CPSR into R0
+
+    - Op codes for "Branch"
+        - branch if operations
+        - page 1-23 on the technical reference manual
+
+- Branching
+    - "Jumps" to a named label
+    - label 
+        - Branching and jumping for controlling flow of execution 
+        - Function or subroutine entry points 
+            - labels mark the start of a function or subroutine 
+        - Data References: pointing to data locations for ease of referencing
+        - Code organization 

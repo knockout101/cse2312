@@ -1,0 +1,27 @@
+// .global tells the compiler this is defined in this file
+.global add32
+
+.text
+    - refers to where the code is in the assembly file
+
+
+add32:
+    ADD R0, R0, R1 // R0 <- R0 + R1
+    BX LR // returns to C program
+
+
+when writing C and passing parameters into a function for assembly
+    - add32(x, y);
+        - x is R0 and R1 is y
+        - result should be found in R0
+
+When writing assembly code, the assembly doesn't care if its unsigned or signed but it is required in the function definition 
+
+when dealing with 64 bit numbers
+    - the lower portion goes into r0 and the upper goes into r1 
+        - r1:r0 in the code 
+
+addU64:
+    ADDS R0, R0, R2 // C:R0 (33b) <- R0 + R2, S means set/update flags
+    ADC R1, R1, R3 // R1 <- R1 + R3 + C 
+    BX LR

@@ -1,0 +1,28 @@
+# reference material -> Simplified ARM block diagram
+
+- Register file
+    - R13: SP
+        - stack pointer
+    - R14: LR
+        - link Register
+    - R15: PC
+        - program counter
+- Data cache
+    - fast and close piece of memory
+- Instruction cache
+    - fast and close piece of memory for instructions
+
+- ALU
+    - input can be any of the GPR registers
+    - output can go to any register, one that we specify
+
+- "Immediate" means that the value is stored inside the instruction itself
+
+- Technical Reference Manual shows all the commands usable in the specific chip
+
+- GDB
+    - breakpoint at the function that is defined in assembly
+    - step function to step into assembly
+    - i r (inspect register)
+    - i r r0 r1 (inspect register r0 and r1)
+    
