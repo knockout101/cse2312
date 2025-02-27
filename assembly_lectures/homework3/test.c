@@ -9,6 +9,9 @@ extern uint32_t maxU32(uint32_t, uint32_t);
 extern bool isGreaterThanU16(uint16_t x, uint16_t y); // returns 1 if x>y, 0 else
 extern bool isGreaterThanS16(int16_t x, int16_t y); // returns 1 if x>y, 0 else
 extern uint16_t shiftU16(uint16_t x, int8_t p); // return x*2^p for p = -31..31
+extern bool isBitSetU32(uint32_t x, uint32_t bit); // returns 1 if the requested bit is set in x, 0 else
+extern bool isMultOf4U32(uint32_t x);
+extern bool isEqualU16(uint16_t x, uint16_t y); // returns 1 if x=y, 0 if x!=y
 
 int main(int argc, char *args[])
 {
@@ -42,6 +45,15 @@ int main(int argc, char *args[])
             break;
         case 5:
             printf("\n\t%" PRIu16 " shifted %i: %" PRIu16 "\n\n", ua16, b8, shiftU16(ua16, b8));
+            break;
+        case 6:
+            printf("\n\tBit %" PRIu32 " in binary representation of %" PRIu32 " is set: %s\n\n", ub32, ua32, (isBitSetU32(ua32, ub32) ? "true" : "false"));
+            break;
+        case 7:
+            printf("\n\t%" PRIu32 " is divisible by 4: %s\n\n", ua32, (isMultOf4U32(ua32) ? "true" : "false"));
+            break;
+        case 8:
+            printf("\n\t%" PRIu32 " is equal to %" PRIu32 ": %s\n\n", ua16, ub16, (isEqualU16(ua16, ub16) ? "true" : "false"));
             break;
         default:
             fprintf(stderr, "\n------- Incorrect test code | Check usage by calling program without CLI arguments -------\n\n");
